@@ -1,1 +1,60 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: Roboto;
+    src: url("./assets/fonts/Roboto/Roboto-Regular.ttf");
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url("./assets/fonts/Roboto/Roboto-Bold.ttf");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url("./assets/fonts/Roboto/Roboto-Medium.ttf");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url("./assets/fonts/Roboto/Roboto-Italic.ttf");
+    font-style: italic;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+body {
+    font-family: Roboto;
+    header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+        padding: 15px 5px;
+        h1 {
+            text-transform: uppercase;
+            letter-spacing: 0.5rem;
+            color: #ffcf05;
+            text-align: center;
+            .header-name {
+                font-size: 72px;
+            }
+        }
+    }
+    main{
+        margin: 20px 10px;
+    }
+    footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+        padding: 15px 5px;
+        color: #fff;
+        .author {
+            font-size: 14px;
+        }
+    }
+}

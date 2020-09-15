@@ -1,1 +1,16 @@
-<p>main-page works!</p>
+<div class="container">
+    <div class="control-panel">
+        <input  type="text" 
+                class="input-for-city" 
+                placeholder="type city or village name"
+                #city 
+                (keyup.enter)="getCurWeather(city.value)">
+        <div class="input-btn">
+            <button     class="btn" 
+                        type="button" 
+                        (click)="getCurWeather(city.value)">
+                Get
+            </button>
+        </div>
+    </div>
+</div>
