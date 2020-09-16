@@ -17,6 +17,7 @@
     <div class='message-error' *ngIf="isError">
             {{errorMessage}}
     </div>
+
     <section class='weather-info-block'>
         <div *ngIf='dataCollection.length == 0'>
             <p>There is no data to display. Please enter a city for current weather information</p>
@@ -73,9 +74,8 @@
             <hr>
             <div class="button-group">
                 <button (click)='saveWeatherTable()'>Save data locally</button>
-                <button (click)='deleteSavedWeatherTable()'>Clear local storege</button>
+                <button (click)='deleteSavedWeatherTable()'>Clear local storage</button>
             </div>
         </div>
-
     </section>
 </div>
