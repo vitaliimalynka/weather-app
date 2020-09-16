@@ -31,12 +31,12 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color:#00007e;
+        background: linear-gradient(36deg, rgb(13, 211, 255), rgb(3, 137, 255), rgb(28, 121, 192));
         padding: 36px 5px;
         h1 {
             text-transform: uppercase;
             letter-spacing: 0.5rem;
-            color: #ffcf05;
+            color: #fff;
             text-align: center;
             .header-name {
                 font-size: 72px;
@@ -50,7 +50,7 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: #00007e;
+        background: linear-gradient(324deg, rgb(13, 211, 255), rgb(3, 137, 255), rgb(28, 121, 192));
         padding: 15px 5px;
         color: #fff;
         .author {

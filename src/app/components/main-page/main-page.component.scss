@@ -1,3 +1,22 @@
+$color-ligthbluesky:#09b0ff;
+$color-ligthblue: #4abaff;
+$color-softblue: #e4f8ff;
+
+@mixin buttonStyles($width, $height:20px, $bgColor:$color-ligthbluesky) {
+    background: $bgColor;
+    border: none;
+    color: #fff;
+    width: $width;
+    height: $height;
+    border-radius: 5px;
+    &:hover {
+        background-color: $color-ligthblue;
+    }
+    &:focus {
+        outline: none;
+    }
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -9,25 +28,17 @@
             width: 200px;
             padding: 10px;
             border-radius: 5px;
-            border: 1px solid lightskyblue;
+            border: 1px solid $color-ligthbluesky;
             margin-right: 10px;
             &:focus {
-                outline-color: rgb(74, 186, 255);
+                outline-color: $color-ligthblue;
             }
         }
         button {
-            width: 50px;
-            border: none;
-            border-radius: 5px;
-            background-color: lightskyblue;
-            &:hover {
-                background-color: rgb(74, 186, 255);
-            }
-            &:focus {
-                outline: none;
-            }
+            @include buttonStyles(60px, 40px);
         }
     }
+    // end .control-panel
     .weather-info {
         margin: 40px 0;
         display: flex;
@@ -40,14 +51,14 @@
                 min-width: 200px;
                 width: 100%;
                 border-collapse: collapse;
-    
                 td,
                 th {
                     padding: 10px 10px;
                     border: 1px solid #fff;
+                    letter-spacing: 0.1rem;
                 }
                 th {
-                    background-color: lightskyblue;
+                    background-color: $color-softblue;
                     p{
                         // -webkit-transform: rotate(-90deg); 
                         // -moz-transform: rotate(-90deg);
@@ -64,15 +75,45 @@
                 tbody {
                     tr {
                         &:nth-child(even) {
-                            background-color: #e4f8ff;
+                            background-color: $color-softblue;
                         }
-                        td:nth-child(1), td:nth-child(2){
-                            min-width: 130px;
+                        &:first-child{
+                            background-color: lightsteelblue;
+                        }
+                        &:last-child{
+                            border-bottom: 3px solid $color-softblue;
+                        }
+                        td{
+                            button{
+                                @include buttonStyles(20px, 20px, #DC3545);
+                            }
+                            &:nth-child(1), &:nth-child(2){
+                                min-width: 170px;
+                            }
                         }
                     }
                 }
             }
+            // end table
+            hr{
+                margin: 40px 0;
+                border-color: $color-ligthblue;
+            }
+            .button-group{
+                margin: auto;
+                display: flex;
+                justify-content: center;
 
+                button{
+                    @include buttonStyles(200px, 50px);
+                    &:first-child{
+                        margin-right: 10px;
+                    }
+                }
+            }
         }
+        //end .weather-table
     }
+    // end .weather-info
 }
+// end .container

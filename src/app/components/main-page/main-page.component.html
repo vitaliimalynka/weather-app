@@ -5,10 +5,11 @@
                 placeholder="Type city or village name"
                 autocomplete="on"
                 #city 
-                (keyup.enter)="getCurWeather(city.value)">
+                [(ngModel)]="cityName"
+                (keyup.enter)="getCurWeather()">
         <button class="btn" 
                 type="button" 
-                (click)="getCurWeather(city.value)">
+                (click)="getCurWeather()">
             Find
         </button>
     </div>
@@ -38,7 +39,7 @@
                         <td>&nbsp;</td>
                         <td>&deg;C</td>
                         <td>&deg;C</td>
-                        <td>?</td>
+                        <td>mm</td>
                         <td>%</td>
                         <td>%</td>
                         <td>mmHg</td>
@@ -56,11 +57,16 @@
                         <td>{{city.main.pressure}}</td>
                         <td>{{city.wind.speed}}</td>
                         <td>
-                            <button (click)='deleteCity(currentRow)'>-</button>
+                            <button (click)='deleteCity(currentRow)'>&ndash;</button>
                         </td>
                     </tr>
                 </tbody>
             </table>
+            <hr>
+            <div class="button-group">
+                <button (click)='saveWeatherTable()'>Save data locally</button>
+                <button (click)='deleteSavedWeatherTable()'>Clear local storege</button>
+            </div>
         </div>
 
     </section>
