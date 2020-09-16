@@ -39,7 +39,15 @@ $color-softblue: #e4f8ff;
         }
     }
     // end .control-panel
-    .weather-info {
+    .message-error{
+        background-color: #dc354657;
+        width: 300px;
+        margin: 10px auto;
+        padding: 10px;
+        text-align: center;
+        border-radius: 15px;
+    }
+    .weather-info-block {
         margin: 40px 0;
         display: flex;
         align-items: center;

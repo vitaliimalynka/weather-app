@@ -13,8 +13,12 @@
             Find
         </button>
     </div>
-    <section class='weather-info'>
-        <div *ngIf='dataCollection.length == 0' class="info-massage">
+    <!-- end div class="control-panel" -->
+    <div class='message-error' *ngIf="isError">
+            {{errorMessage}}
+    </div>
+    <section class='weather-info-block'>
+        <div *ngIf='dataCollection.length == 0'>
             <p>There is no data to display. Please enter a city for current weather information</p>
         </div>
         <div *ngIf='dataCollection.length > 0' class="weather-table">
@@ -51,7 +55,11 @@
                         <td>{{city.weather[0].description}}</td>
                         <td>{{city.main.temp}}</td>
                         <td>{{city.main.feels_like}}</td>
-                        <td>{{city.rain}}</td>
+                        <td>
+                            <span *ngIf = 'city.rain'>rain: {{city.rain["1h"]}}</span>
+                            <br>
+                            <span *ngIf = 'city.snow'>snow: {{city.snow["1h"]}}</span>
+                        </td>
                         <td>{{city.clouds.all}}</td>
                         <td>{{city.main.humidity}}</td>
                         <td>{{city.main.pressure}}</td>

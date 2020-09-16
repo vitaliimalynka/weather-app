@@ -15,6 +15,8 @@ export class MainPageComponent implements OnInit {
   private currentRequest: WeatherParameters;
   public cityName = '';
   public dataCollection: Array<WeatherParameters>;
+  public isError = false;
+  public errorMessage: string;
 
 
   constructor(private openWeatherMap: OpenWeatherMapService,
@@ -36,10 +38,13 @@ export class MainPageComponent implements OnInit {
             this.currentRequest = result;
             this.dataCollection.push(this.currentRequest);
             this.cityName = '';
+            this.isError = false;
             this.subscriber.unsubscribe();
           },
           error => {
-            console.log(error);
+            console.dir(error);
+            this.errorMessage = `Code ${error.error.cod}! "${this.cityName}" - ${error.error.message}`
+            this.isError = true;
             this.subscriber.unsubscribe();
           },
           
