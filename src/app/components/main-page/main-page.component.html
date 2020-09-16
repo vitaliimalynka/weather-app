@@ -2,15 +2,66 @@
     <div class="control-panel">
         <input  type="text" 
                 class="input-for-city" 
-                placeholder="type city or village name"
+                placeholder="Type city or village name"
+                autocomplete="on"
                 #city 
                 (keyup.enter)="getCurWeather(city.value)">
-        <div class="input-btn">
-            <button     class="btn" 
-                        type="button" 
-                        (click)="getCurWeather(city.value)">
-                Get
-            </button>
-        </div>
+        <button class="btn" 
+                type="button" 
+                (click)="getCurWeather(city.value)">
+            Find
+        </button>
     </div>
+    <section class='weather-info'>
+        <div *ngIf='dataCollection.length == 0' class="info-massage">
+            <p>There is no data to display. Please enter a city for current weather information</p>
+        </div>
+        <div *ngIf='dataCollection.length > 0' class="weather-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>City name</th>
+                        <th>Description</th>
+                        <th><p>Temperature</p></th>
+                        <th><p>Feels</p></th>
+                        <th><p>Precipitation</p></th>
+                        <th><p>Cloudiness</p></th>
+                        <th><p>Humidity</p></th>
+                        <th><p>Pressure</p></th>
+                        <th><p>Wind</p></th>
+                        <th><p>delete item</p></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&deg;C</td>
+                        <td>&deg;C</td>
+                        <td>?</td>
+                        <td>%</td>
+                        <td>%</td>
+                        <td>mmHg</td>
+                        <td>m/s</td>
+                        <td></td>
+                    </tr>
+                    <tr #currentRow *ngFor='let city of dataCollection; let i=index' [attr.data-index]="i">
+                        <td>{{city.name}}</td>
+                        <td>{{city.weather[0].description}}</td>
+                        <td>{{city.main.temp}}</td>
+                        <td>{{city.main.feels_like}}</td>
+                        <td>{{city.rain}}</td>
+                        <td>{{city.clouds.all}}</td>
+                        <td>{{city.main.humidity}}</td>
+                        <td>{{city.main.pressure}}</td>
+                        <td>{{city.wind.speed}}</td>
+                        <td>
+                            <button (click)='deleteCity(currentRow)'>-</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </section>
 </div>

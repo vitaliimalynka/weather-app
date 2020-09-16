@@ -1,4 +1,78 @@
-.container{
+.container {
     max-width: 1200px;
     margin: 0 auto;
+
+    .control-panel {
+        display: flex;
+        justify-content: center;
+        input {
+            width: 200px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid lightskyblue;
+            margin-right: 10px;
+            &:focus {
+                outline-color: rgb(74, 186, 255);
+            }
+        }
+        button {
+            width: 50px;
+            border: none;
+            border-radius: 5px;
+            background-color: lightskyblue;
+            &:hover {
+                background-color: rgb(74, 186, 255);
+            }
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+    .weather-info {
+        margin: 40px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 50vh;
+        .weather-table{
+            align-self: start;
+            table {
+                min-width: 200px;
+                width: 100%;
+                border-collapse: collapse;
+    
+                td,
+                th {
+                    padding: 10px 10px;
+                    border: 1px solid #fff;
+                }
+                th {
+                    background-color: lightskyblue;
+                    p{
+                        // -webkit-transform: rotate(-90deg); 
+                        // -moz-transform: rotate(-90deg);
+                        // -ms-transform: rotate(-90deg);
+                        // -o-transform: rotate(-90deg);
+                        // transform: rotate(-90deg);
+                        writing-mode: vertical-lr;
+                        margin: 0 auto;
+                    }
+                }
+                td{
+                    text-align: center;
+                }
+                tbody {
+                    tr {
+                        &:nth-child(even) {
+                            background-color: #e4f8ff;
+                        }
+                        td:nth-child(1), td:nth-child(2){
+                            min-width: 130px;
+                        }
+                    }
+                }
+            }
+
+        }
+    }
 }
