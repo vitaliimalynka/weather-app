@@ -7,12 +7,12 @@ Language: en.
 In this project, you can try to get data with current weather in some cities/villages.
 When you type some name this app sends a request to https://openweathermap.org/. If the name is correct and the server has any information about the weather for it, the app adds this data to the table.
 
-###Optionally:
+### Optionally:
 1. You can delete some rows from the table by a separate button at the end of each row. This action deletes data only from this table.
 2. You can save all information from the table to the local storage in your browser to get this information after some time. For this action, you can use the button "Save data locally".
 3. you can clear all information from the local storage. For this action, you can use the button "Clear local storage". This action clears all new data also.
 
-###It's dev version. For test this project you need:
+### It's dev version. For test this project you need:
 1. install Node.js from oficcial site https://nodejs.org/
 2. install Angular-CLI: 
 - open Search in Windows
