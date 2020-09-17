@@ -12,7 +12,7 @@ When you type some name this app sends a request to https://openweathermap.org/.
 2. You can save all information from the table to the local storage in your browser to get this information after some time. For this action, you can use the button "Save data locally".
 3. you can clear all information from the local storage. For this action, you can use the button "Clear local storage". This action clears all new data also.
 
-For testin this app online, go to [Weather App](https://vitaliimalynka.github.io/weather-app/).
+For testing this app online, go to [Weather App](https://vitaliimalynka.github.io/weather-app/).
 ### It's dev version. For test this project you need:
 1. install Node.js from oficcial site https://nodejs.org/
 2. install Angular-CLI: 
